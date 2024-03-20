@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>ASTGD Pricing Table</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Pricing Table&rdquo; Documentation by &ldquo;ASTGD&rdquo; v1.0</h3>
+		
+		<h1 class="center">&ldquo;Pricing Table&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 16/03/2024<br>
+					By: ASTGD<br>
+					Email: <a href="mailto: info@astgd.com">info@astgd.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing Pricing Table. Should any queries arise that surpass the content of this help file, please feel free to contact us through the contact form on our user page. <a href="https://astgd.com/">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		 
+		
+		<h2 id="top" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files and Structure</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#psdFiles">PSD Files</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+			<!-- <li><a href="#">PHP Code Explanation</a> <em class="quiet small">(If your theme uses PHP)</em></li>
+			<li><a href="#">Flash</a>  <em class="quiet small">(If your theme uses Flash)</em></li>
+			<li><a href="#">API Usage</a> <em class="quiet small">(If your theme uses an API)</em></li>
+			<li><a href="#">Any additional unique features that need an overview</a></li> -->
+		</ol>
+		
+		 
+		
+		<h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#top">top</a></h3>
+		<p>This theme features a responsive layout designed within a container element. Inside the container, there's a row element containing a column set to occupy the full width (col-md-12) with centered text. Within this column, there's a heading (h2) with a specific class "section-heading mergecolor" and a paragraph with class "section-subheading mergecolor". These elements provide information about choosing an available RDP plan and selecting a data center location.</p>
+        <p>Following this section, there's a set of tabs for different plan options. Each tab has a header group with list items, and below that, there's another set of tabs for selecting billing periods. Both sets of tabs are contained within a row element.</p>
+        <p>The content of the tabs is organized within a div with class "tabs-content". Each tab item has a class "tabs-item active show". Inside each tab, there's a slick slider container with plan information. Each plan is presented within a "plan-container" div with an id indicating the header (e.g., header1plan1). Inside these containers, there's detailed information about the RDP plans, including location, CPU, disk, data, and RAM specifications, along with pricing and an order button.</p>
+        <p>The structure repeats for a total of ten tabs, each representing different plan options.</p>
+        <p>This theme is structured to provide a user-friendly interface for selecting among various RDP plans and billing periods.</p>
+		
+		<img src="./assets/images/index1_screenshot.png" alt="HTML Structure" />
+		
+		<p>If you would like to edit the color, font, or show/hide headergroup & periodheaders in the pricing section, you would do the following in the configsection file:</p>
+
+     <pre>	 "settings": [
+      {
+       "hideheadergroup": false,
+       "hideperiodheader": false,
+       "ColorComment": "Theme color can be: red, green, blue, black, orange, teal, pink, cyan, brown, purple",
+       "themecolor": "brown",
+       "FontComment": "Font name can be: opensans, nunito, poppins, raleway, alexandria, commissioner, farro, geologica, dmsans, quicksand ",
+       "themefont": "opensans"
+      }
+     </pre>
+
+
+	 <p>This theme follows a fixed layout structure with two columns. All information within the main content area is enclosed within a div identified by the id "primaryContent". The sidebar's content, corresponding to column #2, is nested within a div marked with the id "secondaryContent". This template maintains a consistent structure throughout, facilitating easy navigation and modification. Here's a breakdown of the general structure:</p>
+	 <p>The "configsection.json" file contains specifications for period headers and headers. It allows for easy customization of values, visibility, pricing, links, and stockout status:</p>
+	 
+	 <strong>Period Headers:</strong>
+	 
+	 <p>Each period header is defined with attributes such as "name", "value", and "visible".
+	 Users can modify the "value" field to change the text displayed for each period header.
+	 The "visible" attribute can be toggled to control the visibility of each period header.</p>
+	 
+	 <strong>Headers:</strong>
+	 
+	 <p>Headers are categorized with a unique identifier under the "name" attribute.
+	 Each header includes details about multiple plans within an array.
+	 For each plan, users can adjust various parameters such as name, stockout status, pricing for different billing periods (monthly, quarterly, half-yearly, yearly), and associated links for ordering.
+	 Prices for different billing periods (monthly, quarterly, half-yearly, yearly) can be updated as required.
+	 Links for ordering can be modified to direct users to appropriate destinations.
+	 The "stockout" attribute can be modified to reflect the availability status of each plan, allowing users to mark plans as out of stock if necessary.</p>
+	 <p>This configuration file offers a user-friendly approach for customizing headers, period headers, pricing, links, and stockout status, ensuring flexibility and ease of management within the theme.</p>
+
+	 <img src="./assets/images/Index1_json_screenshot.png" alt="HTML Structure">
+<!-- 
+		<p>If you find that your new style is not overriding, it is most likely because of a specificity problem. Scroll down in your CSS file and make sure that there isn't a similar style that has more weight.</p>
+
+		<p>I.E.</p>
+
+<pre>	#wrap #primaryContent a {
+		color: #someColor;
+	}
+</pre>
+
+		<p>So, to ensure that your new styles are applied, make sure that they carry enough "weight" and that there isn't a style lower in the CSS file that is being applied after yours.</p>  -->
+
+		 
+
+		<h3 id="cssFiles"><strong>B) CSS Files and Structure</strong> - <a href="#top">top</a></h3>
+
+        <p>In this theme, two CSS files are utilized for styling:</p>
+        <p>The first CSS file, "bootstrap.min.css", serves as a generic reset file. It assists in ensuring a consistent interpretation of HTML elements across various browsers by overriding default behaviors. Additionally, this file includes some general styling rules such as anchor tag colors, font sizes, and other basic styling attributes. It's important to note that these values may be overridden elsewhere in the file or by subsequent CSS files.</p>
+        <p>The second CSS file, "main-style.css", contains all specific stylings tailored for the page. This file is organized into sections, allowing for better organization and maintenance of the CSS code.</p>
+        <p>Additionally, the Font Awesome library is included via a CDN link to provide access to a wide range of iconography for use within the theme.</p>
+
+
+		
+		<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+
+		<p>If you want to change background-color for any specific themecolor, find the following section in the main-style.css file sheet:</p>
+
+        <img src="./assets/images/Index1_bgcolo_screenshot.png" alt="HTML Structure">
+		 
+		
+		<h3 id="javascript"><strong>C) JavaScript</strong> - <a href="#top">top</a></h3>
+		
+		<p>This theme imports three Javascript files.</p>
+		
+		<ol>
+			<li>jQuery</li>
+			<li>A plugin for the slick carousel</li>
+			<li>My custom script</li>
+		</ol>
+		  
+		<ol>
+			<li>jQuery is a Javascript library that greatly reduces the amount of code that you must write.</li>
+			<li>All of the color,font changing; changing & updating the all prices,links; changing & updating any plan's visibility,stockout status in this site are carried out from the customs scripts. Let's look at some of the important functions in the custom script.
+<pre>	    
+	<p>Function to update the DOM dynamically:</p>
+	$.ajax({
+	url: "js1/configsection.json",
+	dataType: "json",
+	success: function (jsonData) {
+	  data = jsonData;
+	  var headerMatched = false;
+
+	  if (data && data.headers) {
+		data.headers.forEach(function (section) {
+		  if (section.name === selectedheader) {
+			for (var i = 0; i < 5; i++) {
+			  $("#" + selectedheader + "-price" + (i + 1)).html(
+				"<sup>$</sup>" +
+				  section.plans[i][price] +
+				  '<span class="period">/mo</span>'
+			  );
+			  $("#" + selectedheader + "-link" + (i + 1)).attr(
+				"href",
+				section.plans[i][link]
+			  );
+			}
+			headerMatched = true;
+		  }
+		});
+	  }
+
+	  if (headerMatched) {
+		$("#" + period)
+		  .addClass("active")
+		  .siblings()
+		  .removeClass("active");
+	  }
+	},
+  });
+}
+<b>Function for Slick-carousel:</b>
+	function initializeSlick() {
+		$(".my-slider").slick({
+		  infinite: true,
+		  centerPadding: "200px",
+		  slidesToShow: 4,
+		  slidesToScroll: 1,
+		  responsive: [
+			{
+			  breakpoint: 1200,
+			  settings: {
+				centerPadding: "100px",
+				slidesToShow: 3,
+			  },
+			},
+			{
+			  breakpoint: 991,
+			  settings: {
+				centerMode: true,
+				centerPadding: "50px",
+				slidesToShow: 2,
+			  },
+			},
+			{
+			  breakpoint: 780,
+			  settings: {
+				centerMode: false,
+				centerPadding: "50px",
+				slidesToShow: 2,
+			  },
+			},
+			{
+			  breakpoint: 590,
+			  settings: "unslick",
+			},
+		  ],
+		});
+	  }
+</pre>
+			</li>
+
+		</ol>
+		
+		 
+		
+		<!-- <h3 id="psdFiles"><strong>D) PSD Files</strong> - <a href="#top">top</a></h3>
+		
+		<p>I've included three psds with this theme:</p>
+		
+			<ol>
+				<li>The main layout</li>
+				<li>The header</li>
+				<li>The buttons</li>
+			</ol>
+		
+		<p>If you'd like to change the main image in the header, open "header.psd", make the necessary adjustments, and then save the file as "headerBG.png". Do the same for the buttons.</p> 
+		
+		<p>Include any more specific information about your psds.</p>
+		
+		  -->
+		
+		<h3 id="credits"><strong>D) Sources and Credits</strong> - <a href="#top">top</a></h3>
+		
+		<p>I've used the following SVGs,fonts and icons files as listed.
+		
+		<ul>
+			<li><a href="https://www.flaticon.com/">Flaticons</a></li>
+			<li><a href="https://fonts.google.com/">Google Fonts</a></li>
+			<li><a href="https://fontawesome.com/">Font Awesome</a></li>
+		</ul>
+		
+		 
+		
+		<p>Once again, thank you so much for purchasing our Pricing Table. As we said at the beginning, We would be glad to help you if you have any questions relating to this theme.</p> 
+		
+		<p class="append-bottom alt large"><strong><a href="https://astgd.com/"></a>ASTGD</strong></p>
+		<p><a href="#top">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+		
+	</div><!-- end div .container -->
+</body>
+</html>
